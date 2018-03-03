@@ -27,10 +27,16 @@
     animation-name: example;
     animation-duration: 0.1s;
 }
+    div1 button:active {
+    width: 100px;
+    height: 100px;
+    animation-name: example;
+    animation-duration: 0.1s;
+            }
         </style>
         <center>
         <div><img src="http://i.cubeupload.com/K8Q3OT.png" style="height: 350; width: 350; " title="cookie" class="imagesss" onclick="clickersss()"></img></div>
-        <p style="font-family: fantasy; font-size: "><span style="font-size: 200%">You have <span style="font-size: 200%"></span><span id="scorekeeper">0</span> cookies.</span><br><br><br><button style="border-radius: 10px; background-color: #b195bf; border-style: none; border-color: black; font-family: fantasy; height: 100px; width: 300px; font-size: 200%; font-variant: small-caps;" onclick="grammy()">Hire Grandma<br><span style="color: black; opacity: 0.6">200 cookies</span></button><br><br><br><button onclick="hiregrammy()"style="font-size: 200%; border-radius: 10px; background-color: #b195bf; border-style: none; border-color: black; font-variant: small-caps; font-family: fantasy; height: 100px; width: 300px;">Hire Farm<br><span style="color: black; opacity: 0.6">2000 cookies</span></button></p>
+        <p style="font-family: fantasy; font-size: "><span style="font-size: 200%">You have <span style="font-size: 200%"></span><span id="scorekeeper">0</span> cookies.</span><br><br><br><div1><button style="border-radius: 10px; background-color: #b195bf; border-style: none; border-color: black; font-family: fantasy; height: 100px; width: 300px; font-size: 200%; font-variant: small-caps;" onclick="grammy()">Hire Grandma<br><span style="color: black; opacity: 0.6">200 cookies</span></button></div1><br><br><br><button onclick="hiregrammy()"style="font-size: 200%; border-radius: 10px; background-color: #b195bf; border-style: none; border-color: black; font-variant: small-caps; font-family: fantasy; height: 100px; width: 300px;">Hire Farm<br><span style="color: black; opacity: 0.6">2000 cookies</span></button></p>
         </center>
 
     <script>
@@ -76,7 +82,7 @@ function clickersss() {
      setInterval(gramultiply, 1000)
         
         function gramultiply() {
-            var gramtwo = grammies * 5
+            var gramtwo = grammies * 2
             totalScore += gramtwo
             document.getElementById("scorekeeper").textContent = totalScore  
             console.log("you multiplied!")
