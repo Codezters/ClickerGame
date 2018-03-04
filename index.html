@@ -36,12 +36,12 @@
         </style>
         <center>
         <div><img src="http://i.cubeupload.com/lW0We1.png" style="height: 350; width: 350; " title="tomato" class="imagesss" onclick="clickersss()"></img></div>
-        <p style="font-family: fantasy; font-size: "><span style="font-size: 200%">You have <span style="font-size: 200%"></span><span id="scorekeeper">0</span> tomatoes.</span><br><br><br><div1><button style="border-radius: 10px; background-color: #ff6363; border-style: none; border-color: black; font-family: fantasy; height: 100px; width: 300px; font-size: 200%; font-variant: small-caps;" onclick="grammy()">Hire Tomato Growers<br><span style="color: black; opacity: 0.6">200 tomatoes</span></button></div1><br><br><br><button onclick="hiregrammy()"style="font-size: 200%; border-radius: 10px; background-color: #ff6363; border-style: none; border-color: black; font-variant: small-caps; font-family: fantasy; height: 100px; width: 300px;">Hire Farm<br><span style="color: black; opacity: 0.6">2000 tomatoes</span></button></p>
+        <p style="font-family: fantasy; font-size: "><span style="font-size: 200%">You have <span style="font-size: 200%"></span><span id="scorekeeper">0</span> tomatoes<br> and <span id="gramkeeper">0</span> Farm Growers.</span><br><br><br><div1><button style="border-radius: 10px; background-color: #ff6363; border-style: none; border-color: black; font-family: fantasy; height: 100px; width: 300px; font-size: 200%; font-variant: small-caps;" onclick="grammy()">Hire Tomato Growers<br><span style="color: black; opacity: 0.6">200 tomatoes</span></button></div1><br><br><br><button onclick="hiregrammy()"style="font-size: 200%; border-radius: 10px; background-color: #ff6363; border-style: none; border-color: black; font-variant: small-caps; font-family: fantasy; height: 100px; width: 300px;">Hire Farm<br><span style="color: black; opacity: 0.6">2000 tomatoes</span></button></p>
         </center>
 
     <script>
     var totalScore = 0
-        
+    var grammies = 0;
 var savedScore = parseInt(localStorage.getItem("score"));
         if (savedScore > 0) {
             totalScore = savedScore
@@ -50,8 +50,15 @@ var savedScore = parseInt(localStorage.getItem("score"));
         else {
 
         };
+var savedFarm = parseInt(localStorage.getItem("grannynanny"));
+        if (savedFarm > 0) {
+            grammies = savedFarm
+            console.log(grammies)
+        }
+        else {
+            document.getElementById("scorekeeper").textContent = totalScore
+        };
 
-var grammies = 0;
 
 function clickersss() {
     document.getElementById("scorekeeper").textContent = totalScore
@@ -64,6 +71,12 @@ function clickersss() {
             return 
         };
         
+                function savealldata() {
+            localStorage.setItem("grannynanny", grammies);
+            return 
+        };
+        
+        window.onbeforeunload = function() { savealldata(); }
         window.onbeforeunload = function() { savealldata(); }
 
     function grammy() {
@@ -71,6 +84,7 @@ function clickersss() {
             totalScore -= 200
             grammies += 1
             console.log("you have gained a grammy")
+            document.getElementById("gramkeeper").textContent = grammies
             document.getElementById("scorekeeper").textContent = totalScore
         }
         else {
