@@ -36,19 +36,27 @@
         </style>
         <center>
         <div><img src="http://i.cubeupload.com/lW0We1.png" style="height: 350; width: 350; " title="tomato" class="imagesss" onclick="clickersss()"></img></div>
-        <p style="font-family: fantasy; font-size: "><span style="font-size: 200%">You have <span style="font-size: 200%"></span><span id="scorekeeper">0</span> tomatoes<br> and <span id="gramkeeper">0</span> Farm Growers.</span><br><br><br><div1><button style="border-radius: 10px; background-color: #ff6363; border-style: none; border-color: black; font-family: fantasy; height: 100px; width: 300px; font-size: 200%; font-variant: small-caps;" onclick="grammy()">Hire Tomato Growers<br><span style="color: black; opacity: 0.6">200 tomatoes</span></button></div1><br><br><br><button onclick="hiregrammy()"style="font-size: 200%; border-radius: 10px; background-color: #ff6363; border-style: none; border-color: black; font-variant: small-caps; font-family: fantasy; height: 100px; width: 300px;">Hire Farm<br><span style="color: black; opacity: 0.6">2000 tomatoes</span></button></p>
+        <p style="font-family: fantasy; font-size: "><span style="font-size: 200%">You have <span style="font-size: 200%"></span><span id="scorekeeper">0</span> tomatoes,<br> <span id="gramkeeper">0</span> Farm Growers,<br></span> and <span id="farmnumber">0</span> Farms<br><br><br><div1><button style="border-radius: 10px; background-color: #ff6363; border-style: none; border-color: black; font-family: fantasy; height: 100px; width: 300px; font-size: 200%; font-variant: small-caps;" onclick="grammy()">Hire Tomato Growers<br><span style="color: black; opacity: 0.6">200 tomatoes</span></button></div1><br><br><br><button style="font-size: 200%; border-radius: 10px; background-color: #ff6363; border-style: none; border-color: black; font-variant: small-caps; font-family: fantasy; height: 100px; width: 300px;" onclick="farmy()">Hire Farm<br><span style="color: black; opacity: 0.6" >2000 tomatoes</span></button></p>
         </center>
 
     <script>
     var totalScore = 0
     var grammies = 0;
+    var farms = 0;
+
+var savedfarmer = parseInt(localStorage.getItem("farmland"));
+        if (savedfarmer > 0) {
+            farms = savedfarmer
+            console.log(farms)
+        }
+        else {
+        }; 
 var savedScore = parseInt(localStorage.getItem("score"));
         if (savedScore > 0) {
             totalScore = savedScore
             console.log(totalScore)
         }
         else {
-
         };
 var savedFarm = parseInt(localStorage.getItem("grannynanny"));
         if (savedFarm > 0) {
@@ -59,28 +67,26 @@ var savedFarm = parseInt(localStorage.getItem("grannynanny"));
         else {
             document.getElementById("scorekeeper").textContent = totalScore
         };
-
-
 function clickersss() {
     document.getElementById("scorekeeper").textContent = totalScore
     totalScore += 1;
     document.getElementById("scorekeeper").textContent = totalScore
 };
-
         function savealldata() {
             localStorage.setItem("score", totalScore);
             localStorage.setItem("grannynanny", grammies);
+            localStorage.setItem("farmland", farms);
             return 
         };
         
         window.onbeforeunload = function() { savealldata(); }
-
+    
     function grammy() {
         if (totalScore > 199) { 
             totalScore -= 200
             grammies += 1
-            console.log("you have gained a grammy")
             document.getElementById("gramkeeper").textContent = grammies
+            document.getElementById("farmnumber").textContent = farms
             document.getElementById("scorekeeper").textContent = totalScore
         }
         else {
@@ -89,11 +95,31 @@ function clickersss() {
         }
     };
         
+       function farmy() {
+        if (totalScore > 1999) { 
+            totalScore -= 2000
+            farms += 1
+            document.getElementById("farmnumber").textContent = farms
+            document.getElementById("scorekeeper").textContent = totalScore
+        }
+        else {
+        window.alert("You do not have enough tomatoes to hire a farm!");
+        
+        }
+       };
+    setInterval(farmultiply, 1000)
      setInterval(gramultiply, 1000)
         
         function gramultiply() {
             var gramtwo = grammies * 2
             totalScore += gramtwo
+            document.getElementById("scorekeeper").textContent = totalScore
+            document.getElementById("farmnumber").textContent = farms
+        };
+        
+                function farmultiply() {
+            var farmtwo = farms * 25
+            totalScore += farmtwo
             document.getElementById("scorekeeper").textContent = totalScore  
         };
     </script>
