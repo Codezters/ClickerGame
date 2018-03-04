@@ -17,6 +17,12 @@
     50%  {transform: scale(1.1, 1.1);}
     100% {transform: scale(1.00, 1.00);}
 }
+        }
+        @keyframes flash {
+    0%   {background-color: #ff6363;}
+    50%  {background-color: #ffeded;}
+    100% {background-color: #ff6363;}
+}
         
     </style>
     <body>
@@ -24,9 +30,9 @@
     div img:active {
     width: 100px;
     height: 100px;
-    background-color: #ff2d2d;
     animation-name: example;
     animation-duration: 0.1s;
+    animation-name; flash;
 }
     div1 button:active {
     width: 100px;
