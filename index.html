@@ -54,6 +54,7 @@ var savedFarm = parseInt(localStorage.getItem("grannynanny"));
         if (savedFarm > 0) {
             grammies = savedFarm
             console.log(grammies)
+            document.getElementById("gramkeeper").textContent = grammies
         }
         else {
             document.getElementById("scorekeeper").textContent = totalScore
