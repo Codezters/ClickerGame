@@ -40,13 +40,12 @@
     animation-duration: 0.1s;
             }
         </style>
-             <p style="position: relative; top: 0px: 100px; color: #c1c1c1; font-family: fantasy; font-size: 100%; background-color: white"><span style="font-size: 200%">You have <span style="font-size: 200%"></span><span id="scorekeeper">0</span> tomatoes,<br> <span id="gramkeeper">0</span> Tomato Growers,</span> and <span id="farmnumber">0</span> Farms</p>
-        <div><img src="g20.png" style="height: 313; position: relative; left: 200px; top 30px; width: 379; " title="tomato" class="imagesss" onclick="clickersss()"></img></div>
-       <div7 style="style="position relative: right 10px;"><div1><button style=" border-radius: 10px; background-color: #ff6363; border-style: none; border-color: black; font-family: fantasy; height: 100px; width: 300px; font-size: 200%; font-variant: small-caps;" onclick="grammy()">Hire Tomato Growers<br><span style="color: black; opacity: 0.6">200 tomatoes</span></button></div1><br><br><br><div2><button style="font-size: 200%; border-radius: 10px; background-color: #ff6363; border-style: none; border-color: black; font-variant: small-caps; font-family: fantasy; height: 100px; width: 300px;" onclick="farmy()">Hire Farm<br><span style="color: black; opacity: 0.6" >2000 tomatoes</span></button></div2></p><script></div7>
+        <div><img src="g20.png" style="height: 313; position: absolute; top: 100px; left 100px; width: 379; " title="tomato" class="imagesss" onclick="clickersss()"></img></div>
+        <p style="text-align:center; position: absolute; right: 150px; top: 100px;color: #c1c1c1; font-family: fantasy; font-size: "><span style="font-size: 200%">You have <span style="font-size: 200%"></span><span id="scorekeeper">0</span> tomatoes,<br> <span id="gramkeeper">0</span> Tomato Growers,<br></span> and <span id="farmnumber">0</span> Farms<br><br><br><div1><button style="border-radius: 10px; background-color: #ff6363; border-style: none; border-color: black; font-family: fantasy; height: 100px; width: 300px; font-size: 200%; font-variant: small-caps;" onclick="grammy()">Hire Tomato Growers<br><span style="color: black; opacity: 0.6">200 tomatoes</span></button></div1><br><br><br><div2><button style="font-size: 200%; border-radius: 10px; background-color: #ff6363; border-style: none; border-color: black; font-variant: small-caps; font-family: fantasy; height: 100px; width: 300px;" onclick="farmy()">Hire Farm<br><span style="color: black; opacity: 0.6" >2000 tomatoes</span></button></div2></p>
+    <script>
     var totalScore = 0
     var grammies = 0;
     var farms = 0;
-
 var savedfarmer = parseInt(localStorage.getItem("farmland"));
         if (savedfarmer > 0) {
             farms = savedfarmer
