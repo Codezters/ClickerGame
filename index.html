@@ -87,7 +87,7 @@ function clickersss() {
             totalScore -= tomatogrowercost
             grammies += 1
             bob = Math.pow(1.08, grammies)
-            tomatogrowercost = Math.floor(bob) * 50
+            tomatogrowercost = Math.round(bob * 50)
             document.getElementById("tomatoamt").textContent = tomatogrowercost
             document.getElementById("gramkeeper").textContent = grammies
             document.getElementById("farmnumber").textContent = farms
