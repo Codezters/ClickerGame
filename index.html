@@ -46,19 +46,10 @@
         <p style="text-align: right; position: absolute; right: 1%; top: 1%; font-family: fantasy; font-size: "><span style="font-size: 200%">You have <span style="font-size: 200%"></span><span id="scorekeeper">0</span> tomatoes,<br> <span id="gramkeeper">0</span> Tomato Growers,</span><span style="font-size: 200%;"><br> and </span><span style="font-size: 200%;" id="farmnumber">0</span><span style="font-size: 200%"> Farms</span><br><br><br><div1></p>    
 <script>
     var totalScore = 0;
-    var bob = 0;
     var grammies = 0;
     var farms = 0;
     var tomatogrowercost = 50;
-    
-var savedfarmgrowers = parseInt(localStorage.getItem("tomatogrowersmen"));
-        if (savedfarmgrowers > 50) {
-            tomatogrowercost = savedfarmgrowers
-            console.log(tomatogrowercost)
-        }
-        else {
-        };  
-    
+    var bob = math.pow(1.08, grammies);
 var savedfarmer = parseInt(localStorage.getItem("farmland"));
         if (savedfarmer > 0) {
             farms = savedfarmer
@@ -94,14 +85,14 @@ function clickersss() {
             localStorage.setItem("tomatogrowersmen", tomatogrowercost);
             return 
         };
-        
         window.onbeforeunload = function() { savealldata(); }
     
     function grammy() {
         if (totalScore > 49) { 
             totalScore -= tomatogrowercost
             grammies += 1
-            tomatogrowercost = math.floor(math.random(bob - 10, bob + 100))
+            bob = math.pow(1.08, grammies)
+            tomatogrowercost = bob * 50
             document.getElementById("tomatoamt").textContent = tomatogrowercost
             document.getElementById("gramkeeper").textContent = grammies
             document.getElementById("farmnumber").textContent = farms
