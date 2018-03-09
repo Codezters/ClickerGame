@@ -42,12 +42,22 @@
             }
         </style>
         <div><img src="g20.png" style="height: 313; position: relative; top: 50%; left: 37%; width: 379; " title="tomato" class="imagesss" onclick="clickersss()"></img></div>            
-        <div9 style="position: relative; right: -39%; top 50%;"><button style="border-radius: 10px; background-color: #ff6363; border-style: none; border-color: black; font-family: fantasy; height: 100px; width: 300px; font-size: 200%; font-variant: small-caps;" onclick="grammy()">Hire Tomato Growers<br><span style="color: black; opacity: 0.6">200 tomatoes</span></button></div1><br><br><br><div2><button style="font-size: 200%; border-radius: 10px; background-color: #ff6363; border-style: none; border-color: black; font-variant: small-caps; font-family: fantasy; height: 100px; width: 300px;" onclick="farmy()">Hire Farm<br><span style="color: black; opacity: 0.6" >2000 tomatoes</span></button></div2></div9>
+        <div9 style="position: relative; right: -39%; top 50%;"><button style="border-radius: 10px; background-color: #ff6363; border-style: none; border-color: black; font-family: fantasy; height: 100px; width: 300px; font-size: 200%; font-variant: small-caps;" onclick="grammy()">Hire Tomato Growers<br><span style="color: black; opacity: 0.6"><span id="tomatoamt">50</span><span> tomatoes</span></button></div1><br><br><br><div2><button style="font-size: 200%; border-radius: 10px; background-color: #ff6363; border-style: none; border-color: black; font-variant: small-caps; font-family: fantasy; height: 100px; width: 300px;" onclick="farmy()">Hire Farm<br><span style="color: black; opacity: 0.6" >2000 tomatoes</span></button></div2></div9>
         <p style="text-align: right; position: absolute; right: 1%; top: 1%; font-family: fantasy; font-size: "><span style="font-size: 200%">You have <span style="font-size: 200%"></span><span id="scorekeeper">0</span> tomatoes,<br> <span id="gramkeeper">0</span> Tomato Growers,</span><span style="font-size: 200%;"><br> and </span><span style="font-size: 200%;" id="farmnumber">0</span><span style="font-size: 200%"> Farms</span><br><br><br><div1></p>    
 <script>
     var totalScore = 0
     var grammies = 0;
     var farms = 0;
+    var tomatogrowercost = 50;
+    
+var savedfarmgrowers = parseInt(localStorage.getItem("tomatogrowersmen"));
+        if (savedfarmgrowers > 50) {
+            tomatogrowercost = savedfarmgrowers
+            console.log(tomatogrowercost)
+        }
+        else {
+        };  
+    
 var savedfarmer = parseInt(localStorage.getItem("farmland"));
         if (savedfarmer > 0) {
             farms = savedfarmer
@@ -80,6 +90,7 @@ function clickersss() {
             localStorage.setItem("score", totalScore);
             localStorage.setItem("grannynanny", grammies);
             localStorage.setItem("farmland", farms);
+            localStorage.setItem("tomatogrowersmen", tomatogrowercost);
             return 
         };
         
@@ -87,7 +98,7 @@ function clickersss() {
     
     function grammy() {
         if (totalScore > 199) { 
-            totalScore -= 200
+            totalScore -= 50
             grammies += 1
             document.getElementById("gramkeeper").textContent = grammies
             document.getElementById("farmnumber").textContent = farms
@@ -118,13 +129,15 @@ function clickersss() {
             var gramtwo = grammies * 2
             totalScore += gramtwo
             document.getElementById("scorekeeper").textContent = totalScore
-            document.getElementById("farmnumber").textContent = farms
+            tomatogrowercost = tomatogrowercost * 2
+            document.getElementById("tomatoamt").textContent = tomatogrowercost
         };
         
                 function farmultiply() {
             var farmtwo = farms * 25
             totalScore += farmtwo
-            document.getElementById("scorekeeper").textContent = totalScore  
+            document.getElementById("scorekeeper").textContent = totalScore
+            document.getElementById("tomato").textContent = farms
         };
     </script>
 </body>
