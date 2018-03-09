@@ -1,10 +1,5 @@
 <html>
 <head>
-    <class>
-    
-    
-    
-    </class>
     <meta name="viewport" content="width=device-width, initial-scale=1.0", user-scalable="0", maximum-scale="1">
     <title>Tomato Clicker</title>
     </head>
@@ -88,7 +83,7 @@ function clickersss() {
         window.onbeforeunload = function() { savealldata(); }
     
     function grammy() {
-        if (totalScore > 49) { 
+        if (totalScore > tomatogrowercost - 1) { 
             totalScore -= tomatogrowercost
             grammies += 1
             bob = Math.pow(1.08, grammies)
@@ -97,7 +92,6 @@ function clickersss() {
             document.getElementById("gramkeeper").textContent = grammies
             document.getElementById("farmnumber").textContent = farms
             document.getElementById("scorekeeper").textContent = totalScore
-            bob = grammies * 100;
         }
         else {
         window.alert("You do not have enough tomatoes to hire a tomato grower!");
