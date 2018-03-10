@@ -108,7 +108,10 @@ function clickersss() {
             tomatogrowercost = Math.round(bob * 2000)
             document.getElementById("farmnumber").textContent = farms
             document.getElementById("scorekeeper").textContent = totalScore
-        }
+            document.getElementById("tomatoamt").textContent = tomatogrowercost
+            document.getElementById("gramkeeper").textContent = grammies
+            document.getElementById("farmnumber").textContent = farms        }
+           
         else {
         window.alert("You do not have enough tomatoes to hire a farm!");
         
@@ -121,6 +124,11 @@ function clickersss() {
             var gramtwo = grammies * 2
             totalScore += gramtwo
             document.getElementById("scorekeeper").textContent = totalScore
+            document.getElementById("farmnumber").textContent = farms
+            document.getElementById("scorekeeper").textContent = totalScore
+            document.getElementById("tomatoamt").textContent = tomatogrowercost
+            document.getElementById("gramkeeper").textContent = grammies
+            document.getElementById("farmcost").textContent = farmercost
         };
         
                 function farmultiply() {
