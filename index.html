@@ -105,6 +105,7 @@ function clickersss() {
         if (totalScore > farmercost - 1) { 
             totalScore -= farmercost
             farms += 1
+            bob = Math.pow(1.08, farms)
             tomatogrowercost = Math.round(bob * 2000)
             document.getElementById("farmnumber").textContent = farms
             document.getElementById("scorekeeper").textContent = totalScore
