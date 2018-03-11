@@ -46,6 +46,7 @@
     var tomatogrowercost = 50;
     var farmercost = 2000;
     var bob = Math.pow(1.08, grammies);
+   
 
 var savedfarmer = parseInt(localStorage.getItem("farmland"));
         if (savedfarmer > 0) {
@@ -70,6 +71,16 @@ var savedFarm = parseInt(localStorage.getItem("grannynanny"));
         else {
             document.getElementById("scorekeeper").textContent = totalScore
         };
+    
+    if (savedFarm > 1) {
+        bob = Math.pow(1.08, grammies)
+        tomatogrowercost = Math.round(bob * 50)   
+    }
+    else if (savedFarmer > 1) {
+        bob = Math.pow(1.08, farms)
+        farmercost = Math.round(bob * 2000)
+    };
+    
 function clickersss() {
     document.getElementById("scorekeeper").textContent = totalScore
     totalScore += 1;
@@ -156,8 +167,8 @@ function clickersss() {
 
 <div class="footer">
     <center>
-    <img src="gt.png" style="opacity: 0.5; height: 40px; width: 40px;"></img>
-    <img src="di.png" style="opacity: 0.5; height: 40px; width: 40px;" ></img>
+    <a href="https://discord.gg/dyD5gTZ"><img src="gt.png" style="opacity: 0.5; height: 40px; width: 40px;"></img></a>
+    <a href="https://github.com/Codezters/ClickerGame"><img src="di.png" style="opacity: 0.5; height: 40px; width: 40px;" ></img></a>
     </center>
 </div>
 </html>
