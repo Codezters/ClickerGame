@@ -76,7 +76,7 @@ var savedFarm = parseInt(localStorage.getItem("grannynanny"));
         bob = Math.pow(1.08, grammies)
         tomatogrowercost = Math.round(bob * 50)   
     }
-    else if (savedFarmer > 1) {
+    else if (savedfarmer > 1) {
         bob = Math.pow(1.08, farms)
         farmercost = Math.round(bob * 2000)
     };
@@ -131,7 +131,7 @@ function clickersss() {
        };
     setInterval(farmultiply, 1000)
     setInterval(savealldata, 1000)
-     setInterval(gramultiply, 1000)
+    setInterval(gramultiply, 1000)
         
         function gramultiply() {
             var gramtwo = grammies * 2
